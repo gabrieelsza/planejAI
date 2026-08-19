@@ -1,0 +1,88 @@
+import type { FormStepProps } from "../features/simulation/FormStep";
+
+import {
+    CalendarClock,
+    CreditCard, 
+    Goal, 
+    Landmark,
+    PiggyBank, 
+    Wallet,
+} from 'lucide-react'
+
+export const simulationFormSteps: FormStepProps[] = [
+    {
+        id: 'Income', 
+        icon: PiggyBank, 
+        title: "Renda Mensal Bruta", 
+        question: 'Quanto é depositado na sua conta todo mês (somando todas as fontes ) ?', 
+        inputProps: {
+            placeholder: "ex: 5.000,00", 
+            prefix: "R$", 
+            maxLength: 12,
+        }
+    },
+
+    { 
+        id: 'expenses', 
+        icon: CreditCard, 
+        title: "Custo fixo de vida", 
+        question: 'Quanto você gasta mensalmente com custos fixos (aluguel, contas, etc)?', 
+        inputProps: {
+            placeholder: "ex: 2.000,00", 
+            prefix: "R$", 
+            maxLength: 12,
+        }
+    },
+
+    { 
+        id: 'debts', 
+        icon: Landmark, 
+        title: "Dividas / parcelas ", 
+        question: 'Você tem algum valor comprometido com parcelas ou emprestimos mensalmente ?', 
+        inputProps: {
+            placeholder: "ex: 500,00", 
+            prefix: "R$", 
+            maxLength: 12,
+        }
+    },
+    { 
+        id: 'goalName', 
+        icon: Goal, 
+        title: "Nome da meta ", 
+        question: 'Qual objetivo que você deseja alcançar ?', 
+        inputProps: {
+            placeholder: "ex: Viagem para o Japão", 
+            prefix: "R$", 
+            maxLength: 50,
+        }
+    },
+    { 
+        id: 'goalAmount', 
+        icon: Wallet, 
+        title: " Custo da meta ", 
+        question: ' Quanto custa realizar esse sonho ?', 
+        inputProps: {
+            placeholder: "ex: 15.500,00", 
+            prefix: "R$", 
+            maxLength: 12,
+        }
+    },
+
+    { 
+        id: 'goalDeadline', 
+        icon: CalendarClock, 
+        title: "Prazo desejado", 
+        question: 'Em quantos meses você planeja atingir esse objetivo ?', 
+        inputProps: {
+            type: "number", 
+            placeholder: "ex: 12",
+            suffix: "meses", 
+            min: 1,
+            max: 120,
+        }, 
+        submitButtonProps: {
+            label: "Gerar simulações", 
+            emojiIcon: '🌞'
+        }
+    },
+]
