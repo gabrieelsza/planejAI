@@ -15,7 +15,7 @@ export const router = createBrowserRouter([
         element: <h1> Historico do resultado </h1>,
       },
       {
-        path: "/resultado ",
+        path: "/resultado",
         element: <h1> Historico das simulações</h1>,
       },
     ],

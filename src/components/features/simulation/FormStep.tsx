@@ -18,7 +18,7 @@ export interface FormStepProps {
 
 interface ActionsButtonsProps {
     onBack: () => void
-    onNext: () => void
+    onNext: (value: string) => void
     hideBackButton?: boolean 
 }
 
@@ -32,7 +32,7 @@ export function FormStep({icon: Icon, title, question, inputProps, submitButtonP
             return
         }
         
-        onNext()
+        onNext(inputValue)
     }
 
     return (
@@ -71,7 +71,6 @@ export function FormStep({icon: Icon, title, question, inputProps, submitButtonP
 
                     <Button
                         type="submit"
-                        onClick={onNext}
                         variant="primary"
                         disabled={!inputValue}
                         icon={!submitButtonProps ? ArrowRight : undefined}
