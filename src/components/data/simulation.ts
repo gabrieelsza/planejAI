@@ -11,7 +11,7 @@ import {
 
 export const simulationFormSteps = [
     {
-        id: 'Income', 
+        id: 'income', 
         icon: PiggyBank, 
         title: "Renda Mensal Bruta", 
         question: 'Quanto é depositado na sua conta todo mês (somando todas as fontes ) ?', 
@@ -91,3 +91,5 @@ export type SimulationFormData = Record<
     (typeof simulationFormSteps)[number]['id'], 
     string
 >
+
+export type SimulationRecord = SimulationFormData & { id: string}

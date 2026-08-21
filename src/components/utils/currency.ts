@@ -16,3 +16,16 @@ export function formatCurrencyMask(value: string): string {
     maximumFractionDigits: 2,
   })
 }
+
+export function parseCurrency(value?: string | null): number {
+  if (!value) return 0
+
+  const normalized = value
+    .replace(/\s/g, '')
+    .replace('R$', '')
+    .replace(/\./g, '')
+    .replace(',', '.')
+    .trim()
+
+  return Number(normalized) || 0
+}
