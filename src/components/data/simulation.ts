@@ -1,3 +1,4 @@
+import type { InsightData } from "../../services/aiService";
 import type { FormStepProps } from "../features/simulation/FormStep";
 
 import {
@@ -52,7 +53,6 @@ export const simulationFormSteps = [
         question: 'Qual objetivo que você deseja alcançar ?', 
         inputProps: {
             placeholder: "ex: Viagem para o Japão", 
-            prefix: "R$", 
             maxLength: 50,
         }
     },
@@ -92,4 +92,7 @@ export type SimulationFormData = Record<
     string
 >
 
-export type SimulationRecord = SimulationFormData & { id: string}
+export type SimulationRecord = SimulationFormData & { 
+    id: string
+    insight?: InsightData
+}
